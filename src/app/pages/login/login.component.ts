@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
     isLoginFailed = false;
     errorLogin = '';
 
+    isLoading = false;
+
     register = false;
 
     constructor(private router: Router, private authService: AuthService, private datePipe: DatePipe) {}
@@ -42,7 +44,11 @@ export class LoginComponent implements OnInit {
                 this.isLogged = true;
                 this.isLoginFailed = false;
                 this.authService.saveToken(data.token);
-                this.router.navigate(['']);
+                this.isLoading = true;
+                setTimeout(() => {
+                    this.isLoading = false;
+                    this.router.navigate(['/']);
+                }, 1000);
             },
             (err) => {
                 this.errorLogin = err.error.message;

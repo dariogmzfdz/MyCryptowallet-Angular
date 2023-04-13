@@ -16,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WalletComponent } from './pages/wallet/wallet.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { YourGameCardComponent } from './components/your-game-card/your-game-card.component';
+import { CryptoCardComponent } from './components/crypto-card/crypto-card.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BuyComponent } from './components/cryptos/buy/buy.component';
 import { SellComponent } from './components/cryptos/sell/sell.component';
@@ -25,6 +25,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
         CryptosComponent,
         LoginComponent,
         WalletComponent,
-        YourGameCardComponent,
+        CryptoCardComponent,
         BuyComponent,
         SellComponent,
     ],
@@ -55,6 +56,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
         ReactiveFormsModule,
         MatDatepickerModule,
         MatNativeDateModule,
+        MatProgressSpinnerModule,
     ],
     providers: [DatePipe, MatSnackBar],
     bootstrap: [AppComponent],

@@ -335,3 +335,10 @@ strong {
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

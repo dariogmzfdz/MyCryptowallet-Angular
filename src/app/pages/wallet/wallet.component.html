@@ -15,10 +15,10 @@
     </button>
 </mat-form-field>
 <div class="your-games-container" [hidden]="hideContent()">
-    <app-your-game-card
+    <app-crypto-card
         *ngFor="let userCrypto of dataSource.connect().value"
         [userCrypto]="userCrypto"
-    ></app-your-game-card>
+    ></app-crypto-card>
     <mat-paginator
         class="paginator"
         [length]="dataSource.data.length"

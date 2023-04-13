@@ -1,4 +1,4 @@
-<div class="login-container" *ngIf="!register">
+<div class="login-container" *ngIf="!register && !isLoading">
     <app-header></app-header>
     <!-- Login Form -->
     <form
@@ -92,3 +92,9 @@
     </form>
     <div class="login-background"></div>
 </div>
+<mat-spinner
+    class="spinner"
+    *ngIf="isLoading"
+    [diameter]="50"
+    [strokeWidth]="4"
+></mat-spinner>

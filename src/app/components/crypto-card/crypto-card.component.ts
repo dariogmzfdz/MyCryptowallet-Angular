@@ -4,11 +4,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-your-game-card',
-  templateUrl: './your-game-card.component.html',
-  styleUrls: ['./your-game-card.component.css']
+  selector: 'app-crypto-card',
+  templateUrl: './crypto-card.component.html',
+  styleUrls: ['./crypto-card.component.css']
 })
-export class YourGameCardComponent implements OnInit {
+export class CryptoCardComponent implements OnInit {
 
   @Input() userCrypto: any;
 
