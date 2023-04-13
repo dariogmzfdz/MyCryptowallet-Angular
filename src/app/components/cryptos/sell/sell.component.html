@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Sell {{ data.name }}</h2>
+<form [formGroup]="sellForm" (ngSubmit)="sell()" enctype="multipart/form-data">
+    <mat-dialog-content class="mat-typography">
+        <p *ngIf="userWallet != null">You have {{ userWallet?.amount }} {{ data.name }}</p>
+        <p *ngIf="userWallet == null">You dont have any {{ data.name }}</p>
+        <p>{{ data.name }} value: <strong>{{ data.value }} €</strong></p>
+        <p>How many {{ data.name }} do you want to sell?</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter the amount</mat-label>
+            <input
+                matInput
+                name="amount"
+                formControlName="amount"
+                required
+            />
+        </mat-form-field>
+        <p>Are you sure you want to sell {{ data.name }}?</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial type="submit">
+            Sell
+        </button>
+    </mat-dialog-actions>
+</form>

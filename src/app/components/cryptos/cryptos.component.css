@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+.table-container {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.crypto-table {
+    width: 80%;
+    height: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #E0AAFF;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe; 
+}
+
+.crypto-table th {
+    background-color: #bc13fe;
+    color: #fff;
+    text-align: left;
+    font-weight: 700;
+}
+
+.crypto-table th, .crypto-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.crypto-table td {
+    color: #E0AAFF;
+}
+
+.crypto-table tr:hover {
+    background-color: #313131;
+}
+
+.crypto-icon {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+.cryptos-paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 10%;
+    background-color: transparent;
+    color: #E0AAFF;
+}
+
+.buy-button {
+    color: #54c022;
+}
+
+.buy-button:hover {
+    color: #44991c;
+    transform: scale(1.5);
+    transition: all 0.2s ease-in-out;
+}
+
+.sell-button {
+    color: #c02222;
+}
+
+.sell-button:hover {
+    color: #9c1c1c;
+    transform: scale(1.5);
+    transition: all 0.2s ease-in-out;
+}

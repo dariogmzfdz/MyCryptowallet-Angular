@@ -1,0 +1,94 @@
+<div class="login-container" *ngIf="!register">
+    <app-header></app-header>
+    <!-- Login Form -->
+    <form
+        class="login-form"
+        (ngSubmit)="onSubmitLogin()"
+        [formGroup]="loginForm"
+    >
+        <h1 class="login-title">Login to create your wallet</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput formControlName="email" required />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input
+                matInput
+                formControlName="password"
+                type="password"
+                required
+            />
+        </mat-form-field>
+        <button type="submit" class="button-login">
+            <strong>Login</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+        <div class="register-link">
+            <p>Don't have an account? <a (click)="register = true">Register</a></p>
+        </div>
+    </form>
+    <div class="login-background"></div>
+</div>
+<!-- Register Form -->
+<div class="register-container" *ngIf="register">
+    <form
+        class="register-form"
+        (ngSubmit)="onSubmitRegister()"
+        [formGroup]="registerForm"
+    >
+        <h1 class="register-title">Register to create your wallet</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your username</mat-label>
+            <input matInput formControlName="username" required />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput formControlName="email" required />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input
+                matInput
+                formControlName="password"
+                type="password"
+                required
+            />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your full name</mat-label>
+            <input matInput formControlName="fullname" required />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your birth date</mat-label>
+            <input class="input-date" matInput [matDatepicker]="picker" formControlName="birthdate" required />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your deposit</mat-label>
+            <input matInput formControlName="deposit" required />
+        </mat-form-field>
+        <button type="submit" class="button-register">
+            <strong>Register</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+    </form>
+    <div class="login-background"></div>
+</div>

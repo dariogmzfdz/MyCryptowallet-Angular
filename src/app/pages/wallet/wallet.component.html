@@ -1,0 +1,49 @@
+<app-header></app-header>
+<app-welcome></app-welcome>
+<mat-form-field class="search-box">
+    <mat-label class="search-label">Search by name</mat-label>
+    <input class="search-input" #search matInput type="text" (keyup)="onSearchKeyUp(search)" />
+    <button
+        mat-button
+        *ngIf="search"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="onClearClicked(search)"
+    >
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+<div class="your-games-container" [hidden]="hideContent()">
+    <app-your-game-card
+        *ngFor="let userCrypto of dataSource.connect().value"
+        [userCrypto]="userCrypto"
+    ></app-your-game-card>
+    <mat-paginator
+        class="paginator"
+        [length]="dataSource.data.length"
+        [pageSize]="3"
+    ></mat-paginator>
+</div>
+<div
+    class="your-games-container"
+    *ngIf="dataSource.connect().value.length === 0 || !isLogged"
+>
+    <div
+        class="no-games"
+        *ngIf="dataSource.connect().value.length === 0 && isLogged && !isSearching"
+    >
+        <h1>You have no cryptocurrencies in your list</h1>
+        <h2>Go to the home page and add some!</h2>
+    </div>
+    <div
+        class="no-games"
+        *ngIf="dataSource.connect().value.length === 0 && isLogged && isSearching"
+    >
+        <h1>You have no cryptocurrencies matching your search</h1>
+    </div>
+    <div class="no-games" *ngIf="!isLogged">
+        <h1>You are not logged in</h1>
+        <h2>Go to the login page and log in!</h2>
+    </div>
+</div>

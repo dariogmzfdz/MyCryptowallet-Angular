@@ -1,0 +1,16 @@
+<div class="welcome-container">
+    <h2 class="welcome">Welcome User!</h2>
+    <h1 class="title">The best place to buy and sell cryptocurrencies</h1>
+    <button type="button" class="button-list" [routerLink]="routerLink()">
+        <strong *ngIf="currentEndpoint === ''">Go to your wallet</strong>
+        <strong *ngIf="currentEndpoint === 'wallet'">Go to home</strong>
+        <div id="container-stars">
+            <div id="stars"></div>
+        </div>
+        <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </button>
+    <div class="welcome-background"></div>
+</div>

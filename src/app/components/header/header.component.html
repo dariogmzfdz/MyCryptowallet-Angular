@@ -1,0 +1,33 @@
+<div class="header-container">
+    <div class="home">
+        <img src="/assets/images/crypto-wallet.png" alt="" class="logo" />
+        <div class="home-title">
+            <h1>MyCryptowallet</h1>
+            <h3>Create your wallet!</h3>
+        </div>
+    </div>
+    <div class="profile-container">
+        <div class="profile" *ngIf="isLogged">
+            <mat-icon (click)="LogOut()">logout</mat-icon>
+            <mat-icon class="profile-icon">account_circle</mat-icon>
+            <h1>{{ user.username }}</h1>
+            <mat-icon class="wallet-icon">account_balance_wallet</mat-icon>
+            <h1>{{ user.deposit }} €</h1>
+        </div>
+        <button
+            type="button"
+            class="button-login"
+            [routerLink]="['/login']"
+            *ngIf="!isLogged && !isInLogin"
+        >
+            <strong>Login</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+    </div>
+</div>
